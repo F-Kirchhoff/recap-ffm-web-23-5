@@ -2,13 +2,7 @@ import { styled } from "styled-components";
 import ColorPicker from "./ColorPicker";
 import { useState } from "react";
 
-export default function ThemeDesigner() {
-  const [theme, setTheme] = useState({
-    primary: "#ff00ff",
-    surface: "#ffffff",
-    surfaceOn: "#000000",
-  });
-
+export default function ThemeDesigner({ theme, setTheme }) {
   return (
     <Wrapper>
       <ColorPicker
