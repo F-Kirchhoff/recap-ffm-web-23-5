@@ -1,19 +1,45 @@
 import { styled } from "styled-components";
 import ColorPicker from "./ColorPicker";
+import { useState } from "react";
 
 export default function ThemeDesigner() {
-  const [primary, setPrimary] = useState("#ff00ff");
-  const [surface, setSurface] = useState("#ff00ff");
-  const [surfaceOn, setSurfaceOn] = useState("#ff00ff");
+  const [theme, setTheme] = useState({
+    primary: "#ff00ff",
+    surface: "#ffffff",
+    surfaceOn: "#000000",
+  });
 
   return (
     <Wrapper>
-      <ColorPicker name="primary" color={primary} onChoose={setPrimary} />
-      <ColorPicker name="surface" color={surface} onChoose={setSurface} />
+      <ColorPicker
+        name="primary"
+        color={theme.primary}
+        onChoose={(newValue) => {
+          setTheme({
+            ...theme,
+            primary: newValue,
+          });
+        }}
+      />
+      <ColorPicker
+        name="surface"
+        color={theme.surface}
+        onChoose={(newValue) => {
+          setTheme({
+            ...theme,
+            surface: newValue,
+          });
+        }}
+      />
       <ColorPicker
         name="surface-on"
-        color={surfaceOn}
-        onChoose={setSurfaceOn}
+        color={theme.surfaceOn}
+        onChoose={(newValue) => {
+          setTheme({
+            ...theme,
+            surfaceOn: newValue,
+          });
+        }}
       />
     </Wrapper>
   );

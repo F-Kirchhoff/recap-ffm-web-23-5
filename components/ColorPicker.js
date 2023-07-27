@@ -1,20 +1,18 @@
-import { useState } from "react";
 import { styled } from "styled-components";
 
-export default function ColorPicker({ name }) {
-  const [color, setColor] = useState("#ff0000");
+export default function ColorPicker({ name, color, onChoose }) {
   return (
     <Wrapper chosenColor={color}>
       <label htmlFor="">{name}</label>
       <input
         type="color"
         value={color}
-        onChange={(event) => setColor(event.target.value)}
+        onChange={(event) => onChoose(event.target.value)}
       />
       <input
         type="text"
         value={color}
-        onChange={(event) => setColor(event.target.value)}
+        onChange={(event) => onChoose(event.target.value)}
       />
     </Wrapper>
   );
