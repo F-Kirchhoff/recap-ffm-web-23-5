@@ -4,15 +4,15 @@ import ThemeDesigner from "../components/ThemeDesigner";
 import { useState } from "react";
 
 export default function Home() {
-  const [theme, setTheme] = useState({
+  const theme = {
     primary: "#ff00ff",
     surface: "#ffffff",
     surfaceOn: "#000000",
-  });
+  };
 
   return (
     <PageGrid>
-      <ThemeDesigner theme={theme} setTheme={setTheme} />
+      <ThemeDesigner />
       <Demo theme={theme} />
     </PageGrid>
   );
