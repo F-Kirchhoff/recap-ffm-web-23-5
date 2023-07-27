@@ -1,6 +1,5 @@
 import { styled } from "styled-components";
 import ColorPicker from "./ColorPicker";
-import { useState } from "react";
 
 export default function ThemeDesigner({ theme, setTheme }) {
   return (
